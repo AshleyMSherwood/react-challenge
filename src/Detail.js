@@ -33,7 +33,7 @@ export default function Detail(props) {
     if (isLoading) {
         return <div className="Detail">Loading...</div>;
     }
-    // ideally could format instructions
+    // Why don't the return characters show formatted properly?
     else {
         return (
             <div className="detail-container" id={id}>
