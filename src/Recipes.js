@@ -28,12 +28,13 @@ export default function Recipes(props) {
     }
     else {
         let result = [];
-        // Make one API call for all the meals then pick 5 
-        // instead of making 5 seperate calls to the "random" endpoint
-        // if time should be truly random instead of first 5
+        // Make one API call for all the meals then pick 5 instead of making 5 seperate calls to the "random" endpoint
+        // Random sometimes returns duplicates. To do...
         for (let i = 0; i < 5; i++) {
-            result.push(product.meals[i]);
+            let rand = product.meals[Math.floor(Math.random() * product.meals.length)];
+            result.push(rand);
         }
+        
         const list = result.map((item, index) => {
             return (
                 <Link to={'./detail/' + item.idMeal} key={item.idMeal} className="daily-link">
