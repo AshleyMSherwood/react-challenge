@@ -29,7 +29,7 @@ export default function Recipes(props) {
     else {
         let result = [];
         // Make one API call for all the meals then pick 5 instead of making 5 seperate calls to the "random" endpoint
-        // Random sometimes returns duplicates. To do...
+        // Random sometimes returns duplicates. To do... use lodash to sampleSize? Or a while loop and check against the array?
         for (let i = 0; i < 5; i++) {
             let rand = product.meals[Math.floor(Math.random() * product.meals.length)];
             result.push(rand);
